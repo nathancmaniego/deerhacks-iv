@@ -64,3 +64,10 @@ def scrape_kijiji_rentals(city: str, max_price: Optional[float] = None) -> List[
     except Exception as e:
         print(f"Error scraping Kijiji: {str(e)}")
         return [] 
+    
+if __name__ == "__main__":
+    city = "toronto"  # Change to your preferred city
+    max_price = 2000  # Optional price filter
+    listings = scrape_kijiji_rentals(city, max_price)
+
+    print(json.dumps(listings, indent=4))
