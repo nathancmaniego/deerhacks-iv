@@ -45,11 +45,20 @@ for listing in listings:
         try:
             data = json.loads(script_tag.string)
             print(data)
+            price_list = []
+            if "containsPlace" in data:
+                for place in data["containsPlace"]:
+                    price = place.get("potentialAction", {}).get("priceSpecification", {}).get("price", None)
+                    if price:
+                        price_list.append(price)
+
+            # ✅ Determine price range
+            min_price = min(price_list) if price_list else None
 
             listing_info = {
                 "name": data.get("name", "N/A"),
                 "url": data.get("url", "N/A"),
-                "price": data.get("potentialAction", {}).get("priceSpecification", {}).get("price", "N/A"),
+                "price": min_price if min_price else data.get("potentialAction", {}).get("priceSpecification", {}).get("price", None),
                 "currency": data.get("potentialAction", {}).get("priceSpecification", {}).get("priceCurrency", "N/A"),
                 "address": data.get("address", {}).get("streetAddress", "N/A"),
                 "city": data.get("address", {}).get("addressLocality", "N/A"),
