@@ -14,7 +14,7 @@ PRIORITY : 1
 ESTIMATE : 10 min    ACTUAL : 15 min
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.003 : USER : Not Started
+TYPE     : USER STORY FUS1.004 : USER : Not Started
 NAME     : Build Listings Page (fetch API data)
 PRIORITY : 8 
 ESTIMATE : 2 hours   ACTUAL :
@@ -26,25 +26,31 @@ PRIORITY : 6
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.004 : USER : Not Started
+TYPE     : USER STORY FUS1.003 : zoyafatima : Started
+NAME     : Build Homepage (Name and short description)
+PRIORITY : 6
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.005 : USER : Not Started
 NAME     : Implement Search & Filters
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.005 : USER : Not Started
+TYPE     : USER STORY FUS1.006 : USER : Not Started
 NAME     : Listing Details Page
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.006 : USER : Not Started
+TYPE     : USER STORY FUS1.007 : USER : Not Started
 NAME     : Roommate Matching Form
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.007 : USER : Not Started
+TYPE     : USER STORY FUS1.008 : USER : Not Started
 NAME     : Sublet Posting Form
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
