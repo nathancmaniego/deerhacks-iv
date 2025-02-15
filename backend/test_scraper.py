@@ -13,7 +13,7 @@ def scrape_kijiji_rentals():
     soup = BeautifulSoup(response.text, "html.parser")
     
     listings = []
-    print(soup.find_all("li", class_="data-testid"))
+    
     for item in soup.find_all("li", class_="data-testid"):
         try:
             # Extract title and URL
