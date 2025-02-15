@@ -1,26 +1,59 @@
-import React from "react";
+import logo from "../assets/logo.png"
+import { useState } from "react";
 
 function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <nav className="bg-blue-600 text-white p-4 sticky top-0 w-full z-50">
-      {/* <div className="container mx-auto flex justify-between items-center"> */}
-        <h1 className="text-xl font-bold">UniHousing Hub</h1>
-        <div className="space-x-4">
-          <a href="/" className="hover:underline">
+    <>
+      <header className='flex justify-between items-center text-black py-6 px-8 md:px-32 bg-white drop-shadow-md'>
+        
+        {/* logo */}
+        <a href='#'>
+          <img src={logo} alt="UniHousing Hub" className="w-12 hover:scale-105 transition-all"/>
+        </a>
+        {/* desktop elements */}
+        <ul className="hidden xl:flex items-center gap-12 font-semibold text-base">
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Home</li>
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Listings</li>
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Roommates</li>
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Contact</li>
+        </ul>
+
+        {/* <i className="bx bx-menu xl:hidden block text-5xl cursor-pointer" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}></i> */}
+        
+      </header>
+      
+      {/* mobile menu */}
+      {mobileMenuOpen && (
+        <ul className="xl:hidden flex flex-col gap-4 font-semibold text-base bg-black text-white shadow-md absolute top-24 left-0 w-full p-4">
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Home
-          </a>
-          <a href="/listings" className="hover:underline">
+          </li>
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Listings
-          </a>
-          <a href="/roommate" className="hover:underline">
+          </li>
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Roommates
-          </a>
-          <a href="/contact" className="hover:underline">
+          </li>
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Contact
-          </a>
-        </div>
-      {/* </div> */}
-    </nav>
+          </li>
+        </ul>
+      )}
+    </>
   );
 }
 
