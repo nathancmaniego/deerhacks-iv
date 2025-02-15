@@ -28,7 +28,7 @@ for item in data["data"]["cat1"]["searchResults"].get("listResults", []):
                     f"{item.get('addressState', 'Unknown')} "
                     f"{item.get('addressZipcode', 'Unknown')}",
         "image_url": item.get("imgSrc", "No Image"),
-        "contact_info": None,  # No direct contact info found in the JSON
+        "contact_info": item.get("detailUrl", "No URL"),
         "listing_url": item.get("detailUrl", "No URL")
     }
     listings.append(listing)
@@ -39,3 +39,17 @@ print(df.head(50).to_string())  # prints the first 50 rows in full
 
 # Convert to dictionary
 listings_dict = {listing["id"]: listing for listing in listings}
+
+from database.database import SessionLocal
+from database.crud import save_listings_to_db_z  # Import database functions
+
+# Start database session
+db = SessionLocal()
+
+# Save scraped listings to the database
+save_listings_to_db_z(db, listings_dict)
+
+# Close the session
+db.close()
+
+print("Listings successfully saved to the database.")
