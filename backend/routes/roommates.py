@@ -9,13 +9,129 @@ router = APIRouter()
 
 @router.post("/roommates/mock")
 def add_mock_roommates(db: Session = Depends(get_db)):
-    mock_roommates = [
-        {"user_id": 1, "name": "Alice Johnson", "budget": 850.0, "cleanliness": "Very Clean", "sleep_schedule": "Early Bird", "study_habits": "Quiet", "social_level": "Introvert", "pet_friendly": "Yes", "points": 95, "contact": "alice@example.com"},
-        {"user_id": 2, "name": "Bob Smith", "budget": 950.0, "cleanliness": "Moderate", "sleep_schedule": "Night Owl", "study_habits": "Moderate", "social_level": "Extrovert", "pet_friendly": "No", "points": 88, "contact": "bob@example.com"},
-        {"user_id": 3, "name": "Charlie Brown", "budget": 700.0, "cleanliness": "Messy", "sleep_schedule": "Flexible", "study_habits": "Noisy", "social_level": "Moderate", "pet_friendly": "Yes", "points": 75, "contact": "charlie@example.com"},
-        {"user_id": 4, "name": "Diana Prince", "budget": 1200.0, "cleanliness": "Very Clean", "sleep_schedule": "Early Bird", "study_habits": "Quiet", "social_level": "Extrovert", "pet_friendly": "No", "points": 98, "contact": "diana@example.com"},
-        {"user_id": 5, "name": "Ethan Hunt", "budget": 800.0, "cleanliness": "Moderate", "sleep_schedule": "Night Owl", "study_habits": "Moderate", "social_level": "Introvert", "pet_friendly": "No", "points": 85, "contact": "ethan@example.com"},
+    mock_roommates = mock_roommates = [
+        {
+            "user_id": 1,
+            "name": "Alice Johnson",
+            "budget": 850.0,
+            "cleanliness": "Very Clean",
+            "sleep_schedule": "Early Bird",
+            "study_habits": "Quiet",
+            "social_level": "Introvert",
+            "pet_friendly": "Yes",
+            "points": 95,
+            "contact": "alice@example.com"
+        },
+        {
+            "user_id": 2,
+            "name": "Bob Smith",
+            "budget": 950.0,
+            "cleanliness": "Moderate",
+            "sleep_schedule": "Night Owl",
+            "study_habits": "Moderate",
+            "social_level": "Extrovert",
+            "pet_friendly": "No",
+            "points": 88,
+            "contact": "bob@example.com"
+        },
+        {
+            "user_id": 3,
+            "name": "Charlie Brown",
+            "budget": 700.0,
+            "cleanliness": "Messy",
+            "sleep_schedule": "Flexible",
+            "study_habits": "Noisy",
+            "social_level": "Moderate",
+            "pet_friendly": "Yes",
+            "points": 75,
+            "contact": "charlie@example.com"
+        },
+        {
+            "user_id": 4,
+            "name": "Diana Prince",
+            "budget": 1200.0,
+            "cleanliness": "Very Clean",
+            "sleep_schedule": "Early Bird",
+            "study_habits": "Quiet",
+            "social_level": "Extrovert",
+            "pet_friendly": "No",
+            "points": 98,
+            "contact": "diana@example.com"
+        },
+        {
+            "user_id": 5,
+            "name": "Ethan Hunt",
+            "budget": 800.0,
+            "cleanliness": "Moderate",
+            "sleep_schedule": "Night Owl",
+            "study_habits": "Moderate",
+            "social_level": "Introvert",
+            "pet_friendly": "No",
+            "points": 85,
+            "contact": "ethan@example.com"
+        },
+        {
+            "user_id": 6,
+            "name": "Fiona Gallagher",
+            "budget": 950.0,
+            "cleanliness": "Messy",
+            "sleep_schedule": "Flexible",
+            "study_habits": "Noisy",
+            "social_level": "Extrovert",
+            "pet_friendly": "Yes",
+            "points": 72,
+            "contact": "fiona@example.com"
+        },
+        {
+            "user_id": 7,
+            "name": "George Wilson",
+            "budget": 1000.0,
+            "cleanliness": "Very Clean",
+            "sleep_schedule": "Early Bird",
+            "study_habits": "Quiet",
+            "social_level": "Moderate",
+            "pet_friendly": "No",
+            "points": 91,
+            "contact": "george@example.com"
+        },
+        {
+            "user_id": 8,
+            "name": "Hannah Baker",
+            "budget": 875.0,
+            "cleanliness": "Moderate",
+            "sleep_schedule": "Night Owl",
+            "study_habits": "Quiet",
+            "social_level": "Introvert",
+            "pet_friendly": "Yes",
+            "points": 86,
+            "contact": "hannah@example.com"
+        },
+        {
+            "user_id": 9,
+            "name": "Ian Wright",
+            "budget": 1100.0,
+            "cleanliness": "Very Clean",
+            "sleep_schedule": "Flexible",
+            "study_habits": "Moderate",
+            "social_level": "Extrovert",
+            "pet_friendly": "No",
+            "points": 94,
+            "contact": "ian@example.com"
+        },
+        {
+            "user_id": 10,
+            "name": "Jessica Miller",
+            "budget": 800.0,
+            "cleanliness": "Messy",
+            "sleep_schedule": "Early Bird",
+            "study_habits": "Noisy",
+            "social_level": "Moderate",
+            "pet_friendly": "Yes",
+            "points": 70,
+            "contact": "jessica@example.com"
+        }
     ]
+
 
     for roommate in mock_roommates:
         # Check if user already exists
