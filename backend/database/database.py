@@ -12,7 +12,6 @@ DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://deerhacks_iv_user:5JWmSMi
 # Database Setup
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 Base = declarative_base()
 
 # Dependency for database session
