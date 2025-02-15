@@ -11,87 +11,21 @@ api_url = "https://app.scrapeak.com/v1/scrapers/zillow/listing"
 parameters = {"api_key": api_key, "url": listing_url}
 
 response = requests.get(api_url, params=parameters)
-data = response.json()  # <-- We have our JSON right here
+data = response.json()  
 
-def extract_float_price(price_str):
-    if not price_str:
-        return None
-    cleaned = (
-        price_str.replace("C$", "")
-                 .replace("$", "")
-                 .replace("/mo", "")
-                 .replace(",", "")
-                 .strip()
-    )
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None
+listings = []
+for item in data["data"]["cat1"]["searchResults"].get("listResults", []):
+    listing = {
+        "id": item.get("id"),
+        "title": item.get("statusText", "No Title"),
+        "price": item.get("unformattedPrice", 0),
+        "location": f"{item.get('addressStreet', 'Unknown')}, {item.get('addressCity', 'Unknown')}, {item.get('addressState', 'Unknown')} {item.get('addressZipcode', 'Unknown')}",
+        "image_url": item.get("imgSrc", "No Image"),
+        "contact_info": None,  # No direct contact info found in the JSON
+        "listing_url": item.get("detailUrl", "No URL")
+    }
+    listings.append(listing)
+    print(listing)
 
-def main():
-    # data is already defined at the top-level (in global scope).
-    # We'll reference it here:
-    global data
-
-    listings = []
-
-    # If you have a separate Kijiji-like "listings" block, handle it:
-    if "listings" in data:
-        kijiji_listings = data["listings"]
-        listings.extend(kijiji_listings)
-
-    # Dig into the Zillow block
-    zillow_block = (
-        data
-        .get("props", {})
-        .get("pageProps", {})
-        .get("searchResults", {})
-        .get("cat1", {})
-        .get("searchResults", {})
-    )
-
-    # Combine the possible arrays
-    all_items = []
-    if "listings" in zillow_block:
-        all_items.extend(zillow_block["listings"])
-    if "mapResults" in zillow_block:
-        all_items.extend(zillow_block["mapResults"])
-
-    for item in all_items:
-        title = item.get("statusText")
-        raw_price = item.get("price")
-        price = extract_float_price(raw_price)
-
-        address = item.get("address")
-        city = item.get("addressCity")
-        state = item.get("addressState")
-        location = f"{city}, {state}" if (city and state) else address
-
-        image_url = item.get("imgSrc")
-        if not image_url:
-            photos = item.get("carouselPhotos", [])
-            if photos:
-                image_url = photos[0].get("url")
-
-        contact_info = "Contact via Zillow"
-        listing_url = item.get("detailUrl")
-
-        # Skip if missing title or URL
-        if not title or not listing_url:
-            continue
-
-        new_listing = {
-            "title": title,
-            "price": price,
-            "location": location,
-            "image_url": image_url,
-            "contact_info": contact_info,
-            "listing_url": listing_url
-        }
-        listings.append(new_listing)
-
-    final_data = {"listings": listings}
-    print(json.dumps(final_data, indent=2))
-
-if __name__ == "__main__":
-    main()
+# Convert to dictionary
+listings_dict = {listing["id"]: listing for listing in listings}
