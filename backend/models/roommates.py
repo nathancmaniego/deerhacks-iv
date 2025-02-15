@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.ext.declarative import declarative_base
+from database.database import Base  # ✅ Import `Base`
 
-Base = declarative_base()
 
 class Roommate(Base):
     __tablename__ = "roommates"
@@ -16,3 +15,4 @@ class Roommate(Base):
     social_level = Column(String, index=True)
     pet_friendly = Column(String, index=True)
     points = Column(Integer, index=True)
+    contact = Column(String, index=True)

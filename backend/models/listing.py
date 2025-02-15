@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.ext.declarative import declarative_base
+from database.database import Base  # ✅ Import `Base`
 
-Base = declarative_base()
+
 
 class Listing(Base):
     __tablename__ = "listings"
