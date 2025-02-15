@@ -1,10 +1,11 @@
 import React from 'react';
+import RoommateFilters from '../components/RoommateFilters';
 
 function Roommates() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">Roommates Page</h1>
-      <p>This is the Roommates page placeholder.</p>
+    <div className="roommates-page">
+      {/* <h1>Roommates</h1> */}
+      <RoommateFilters />
     </div>
   );
 }
