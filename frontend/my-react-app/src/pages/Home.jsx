@@ -1,16 +1,32 @@
 import React from 'react';
-import './Home.css'; 
+import './Home.css';
+import sampleImage from '../assets/home.jpg'; // Replace with your image
 
 function Home() {
   return (
     <div className="home-container">
-      <h1 className="home-title">UniHousing Hub</h1>
-      <p className="home-description">
-        Find safe, affordable, and convenient student housing and roommates.
-      </p>
-      <p>
-        Welcome to our platform. Discover rental listings and roommates by aggregating Facebook Marketplace, Kijiji, and university housing listings.
-      </p>
+      <div className="home-top">
+        <div className="home-left">
+          <div className="home-image-container">
+            <img 
+              src={sampleImage} 
+              alt="Housing" 
+              className="home-image" 
+            />
+          </div>
+        </div>
+        <div className="home-right">
+          <h1 className="home-title">DORMIGO</h1>
+          <p className="home-description">
+            Find safe, affordable, and convenient student housing and roommates.
+          </p>
+        </div>
+      </div>
+      <div className="home-bottom">
+        <p className="home-bottom-text">
+          Welcome to our platform. Discover rental listings and roommates by aggregating Facebook Marketplace, Kijiji, and university housing listings.
+        </p>
+      </div>
     </div>
   );
 }
