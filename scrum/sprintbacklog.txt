@@ -50,7 +50,7 @@ PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.002 : USER : Not Started
+TYPE     : USER STORY BUS1.002 : USER : nathanmaniego
 NAME     : Create Listing API
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
