@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import logo from "./assets/logo.png"
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className='w-full h-full absolute bg-gradient-to-r from-blue-400 to-blue-700'>
+      <header className='flex justify-between items-center text-black py-6 px-8 md:px-32 bg-white drop-shadow-md'>
+        
+        {/* logo */}
+        <a href='#'>
+          <img src={logo} alt="UniHousing Hub" className="w-12 hover:scale-105 transition-all"/>
+        
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        {/* desktop elements */}
+        <ul className="hidden xl:flex items-center gap-12 font-semibold text-base">
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Home</li>
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Listings</li>
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Roommates</li>
+          <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">Contact</li>
+        </ul>
+
+        {/* <i className="bx bx-menu xl:hidden block text-5xl cursor-pointer" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}></i> */}
+        
+      </header>
+      
+      {/* mobile menu */}
+      {mobileMenuOpen && (
+        <ul className="xl:hidden flex flex-col gap-4 font-semibold text-base bg-black text-white shadow-md absolute top-24 left-0 w-full p-4">
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Home
+          </li>
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Listings
+          </li>
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Roommates
+          </li>
+          <li
+            className="p-3 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contact
+          </li>
+        </ul>
+      )}
+    </div>
+  );
 }
 
 export default App
