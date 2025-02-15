@@ -174,3 +174,7 @@ def match_roommates(preferences: RoommatePreference, db: Session = Depends(get_d
     matches = query.limit(3).all()
 
     return {"matches": matches}
+
+@router.get("/roommates")
+def get_listings(db: Session = Depends(get_db)):
+    return db.query(Roommate).all()

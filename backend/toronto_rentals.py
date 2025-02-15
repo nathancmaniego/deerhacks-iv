@@ -19,7 +19,9 @@ service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
 # URL to scrape
-url = "https://www.torontorentals.com/toronto?property-type=Condo&property-type=Apartment&property-type=Room&property-type=House&property-type=Studio&property-type=Basement"
+url = "https://www.torontorentals.com/mississauga?property-type=Condo&property-type=Apartment&property-type=Room&property-type=House&property-type=Studio&property-type=Basement"
+url = "https://www.torontorentals.com/mississauga?property-type=Studio&property-type=Apartment&bbox=-79.76033,43.50400,-79.59897,43.59632"
+
 driver.get(url)
 
 # Wait for JavaScript to load (adjust sleep time if needed)
