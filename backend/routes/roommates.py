@@ -145,12 +145,12 @@ def add_mock_roommates(db: Session = Depends(get_db)):
 
 # Define the input model for roommate matching
 class RoommatePreference(BaseModel):
-    budget: Optional[float] = None
-    cleanliness: Optional[str] = None
-    sleep_schedule: Optional[str] = None
-    study_habits: Optional[str] = None
-    social_level: Optional[str] = None
-    pet_friendly: Optional[str] = None
+    budget: Optional[float] = None # 0 - infty
+    cleanliness: Optional[str] = None # "Very Clean", "Moderate", "Messy"
+    sleep_schedule: Optional[str] = None # "Early Bird", "Night Owl", "Flexible"
+    study_habits: Optional[str] = None # "Quiet", "Moderate", "Noisy"
+    social_level: Optional[str] = None  # "Introvert", "Extrovert", "Moderate"
+    pet_friendly: Optional[str] = None # "Yes", "No"
 
 @router.post("/roommates/match")
 def match_roommates(preferences: RoommatePreference, db: Session = Depends(get_db)):

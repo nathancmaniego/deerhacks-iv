@@ -75,13 +75,13 @@ PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 1 hour
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.002 : USER : ethanalindogan
+TYPE     : USER STORY BUS1.002 : USER : ethanalindogan COMPLETED
 NAME     : Create Listing API
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.003 : USER : Not Started
+TYPE     : USER STORY BUS1.003 : USER : nathanmaniego 
 NAME     : Search and Filter Logic
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
