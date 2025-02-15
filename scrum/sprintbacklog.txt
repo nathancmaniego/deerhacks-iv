@@ -44,10 +44,10 @@ PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.007 : markgobriel : In Progress
+TYPE     : USER STORY FUS1.007 : markgobriel : Complete
 NAME     : Roommate Matching Form
 PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
+ESTIMATE : 2 hours   ACTUAL : 2 hours
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY FUS1.008 : USER : Not Started
@@ -66,6 +66,12 @@ TYPE     : USER STORY FUS1.010 : markgobriel : Complete
 NAME     : Clean up homepage
 PRIORITY : 2
 ESTIMATE : 1 hour   ACTUAL : 1 hour
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.011 : markgobriel : Not Started
+NAME     : Contact page
+PRIORITY : 2
+ESTIMATE : 1 hour   ACTUAL : 
 --------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
