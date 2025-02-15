@@ -44,7 +44,7 @@ ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.001 : USER : Not Started
+TYPE     : USER STORY BUS1.001 : USER : nathanmaniego
 NAME     : Set up FastAPI backend
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL :
