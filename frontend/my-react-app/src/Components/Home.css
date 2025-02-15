@@ -1,0 +1,40 @@
+@import '../index.css';
+
+.home-container {
+    text-align: center;
+    padding: 40px; 
+    max-width: 900px; 
+    margin: 20px auto; 
+    background-color: #d5dfff; /* Light background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .home-title {
+    font-size: 3.5em; 
+    margin-bottom: 20px; 
+    color: #2c3e50; 
+    font-weight: 600; 
+    letter-spacing: 1px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  /* Description styling */
+  .home-description {
+    font-size: 1.4em; /* Slightly larger description */
+    color: #e8c6ff; 
+    line-height: 1.6; 
+    margin-bottom: 30px; /* Increased margin */
+  }
+  
+  .home-container p { 
+    font-size: 1.1em; 
+    color: #555; 
+    line-height: 1.5; 
+  }
+  
+  .home-container:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    transition: transform 0.3s ease;
+  }
+  

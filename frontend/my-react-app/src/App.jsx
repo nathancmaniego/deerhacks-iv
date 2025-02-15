@@ -1,5 +1,8 @@
-import logo from "./assets/logo.png"
+import React from 'react';
+import logo from "./assets/logo.png";
+import './index.css';
 import { useState } from "react";
+import Home from "./Components/Home"
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,6 +57,9 @@ function App() {
           </li>
         </ul>
       )}
+      <main>
+        <Home />
+      </main>
     </div>
   );
 }
