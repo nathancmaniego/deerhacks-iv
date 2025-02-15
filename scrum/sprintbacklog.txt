@@ -1,0 +1,87 @@
+priority/storypoints is how difficult it will be/time it will take
+FRONTEND
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.000 : USER : Not Started
+NAME     : Find Figma Templates to base our apps front end on
+PRIORITY : 2
+ESTIMATE : 30 min    ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.001 : USER : Not Started
+NAME     : Set up React.js, TailwindCSS (use Next.js for setup)
+PRIORITY : 1
+ESTIMATE : 10 min    ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.002 : USER : Not Started
+NAME     : Build Listings Page (fetch API data)
+PRIORITY : 8 
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.003 : USER : Not Started
+NAME     : Implement Search & Filters
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.004 : USER : Not Started
+NAME     : Listing Details Page
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.005 : USER : Not Started
+NAME     : Roommate Matching Form
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.006 : USER : Not Started
+NAME     : Sublet Posting Form
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+BACKEND
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.001 : USER : Not Started
+NAME     : Set up FastAPI backend
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.002 : USER : Not Started
+NAME     : Create Listing API
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.003 : USER : Not Started
+NAME     : Search and Filter Logic
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.004 : USER : Not Started
+NAME     : Create Roommate matching api
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.005 : USER : Not Started
+NAME     : Implement Subleting Posting API
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.006 : USER : Not Started
+NAME     : Set up Database (PostgreSQL)
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY BUS1.007 : USER : Not Started
+NAME     : GOOGLE LOGIN
+PRIORITY : 5
+ESTIMATE : 2 hours   ACTUAL :
+--------------------------------------------------------------------------
