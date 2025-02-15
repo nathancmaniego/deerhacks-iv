@@ -55,6 +55,12 @@ NAME     : Sublet Posting Form
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.009 : markgobriel : In Progress
+NAME     : Setup React Router (make navbar link to correct pages)
+PRIORITY : 4
+ESTIMATE : 1 hour   ACTUAL :
+--------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
 TYPE     : USER STORY BUS1.001 : USER : nathanmaniego COMPLETED
