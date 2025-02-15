@@ -51,13 +51,13 @@ ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.001 : USER : nathanmaniego
+TYPE     : USER STORY BUS1.001 : USER : nathanmaniego COMPLETED
 NAME     : Set up FastAPI backend
 PRIORITY : 3
-ESTIMATE : 1 hour   ACTUAL :
+ESTIMATE : 1 hour   ACTUAL : 1 hour
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.002 : USER : nathanmaniego
+TYPE     : USER STORY BUS1.002 : USER : ethanalindogan
 NAME     : Create Listing API
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
@@ -69,26 +69,14 @@ PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.004 : USER : Not Started
+TYPE     : USER STORY BUS1.004 : USER : nathanmaniego COMPLETED
 NAME     : Create Roommate matching api
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.005 : USER : Not Started
-NAME     : Implement Subleting Posting API
-PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.006 : USER : Not Started
+TYPE     : USER STORY BUS1.005 : USER : nathanmaniego COMPLETED
 NAME     : Set up Database (PostgreSQL)
-PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.007 : USER : Not Started
-NAME     : GOOGLE LOGIN
 PRIORITY : 5
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
