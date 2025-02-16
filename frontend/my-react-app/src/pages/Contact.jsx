@@ -7,22 +7,30 @@ function Contact() {
     email: '',
     message: ''
   });
-
+  
+  const [showPopup, setShowPopup] = useState(false);
+  
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Submitted:', formData);
-    // Here you can add API integration if needed
+    // Show the popup
+    setShowPopup(true);
+    // Reset the form
     setFormData({
       name: '',
       email: '',
       message: ''
     });
   };
-
+  
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+  
   return (
     <div className="contact-container">
       <h1 className="contact-title">Contact Us</h1>
@@ -63,6 +71,15 @@ function Contact() {
         </div>
         <button type="submit" className="contact-button">Submit</button>
       </form>
+      
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <p>Thank you! Your message was submitted.</p>
+            <button onClick={closePopup} className="popup-close">Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
