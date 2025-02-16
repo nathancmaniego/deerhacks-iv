@@ -80,10 +80,10 @@ PRIORITY : 2
 ESTIMATE : 15 minutes   ACTUAL : 15 minutes
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.013: markgobriel : Not Started
+TYPE     : USER STORY FUS1.013: markgobriel : Complete
 NAME     : Hookup back-end of roommates to roommates page
 PRIORITY : 9
-ESTIMATE : 2 hours   ACTUAL : 
+ESTIMATE : 2 hours   ACTUAL : 2 hours
 --------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
