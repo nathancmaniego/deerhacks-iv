@@ -188,16 +188,54 @@ def add_mock_roommates(db: Session = Depends(get_db)):
     start_user_id = max_user_id[0] + 1 if max_user_id else 1
 
     # Lists of possible values for each attribute
-    names = ["Alice Johnson", "Bob Smith", "Charlie Brown", "Diana Prince", "Ethan Hunt",
-            "Fiona Carter", "George Wilson", "Hannah Baker", "Ian Wright", "Julia Roberts",
-            "Kevin Hart", "Liam Anderson", "Mia Clark", "Noah Thompson", "Olivia White",
-            "Paul Adams", "Quinn Johnson", "Ryan Lewis", "Sophia Martinez", "Tom Hardy",
-            "Uma Thurman", "Vin Diesel", "Will Smith", "Xavier Brown", "Yara Shahidi",
-            "LeBron James", "Kendrick Lamar", "Zendaya Coleman", "Michael Jordan", "Serena Williams",
-            "Kobe Bryant", "Beyonce Knowles", "Rihanna Fenty", "Jay-Z Carter", "Drake Graham",
-            "Kanye West", "Kim Kardashian", "Kylie Jenner", "Kendall Jenner", "Travis Scott",
-            "Kourtney Kardashian", "Khloe Kardashian", "Kris Jenner", "Caitlyn Jenner", "Stormi Webster"
-            ]  # Add more names
+    names = [
+    "Alice Johnson", "Bob Smith", "Charlie Brown", "Diana Prince", "Ethan Hunt",
+    "Fiona Carter", "George Wilson", "Hannah Baker", "Ian Wright", "Julia Roberts",
+    "Kevin Hart", "Liam Anderson", "Mia Clark", "Noah Thompson", "Olivia White",
+    "Paul Adams", "Quinn Johnson", "Ryan Lewis", "Sophia Martinez", "Tom Hardy",
+    "Uma Thurman", "Vin Diesel", "Will Smith", "Xavier Brown", "Yara Shahidi",
+    
+    # Sports Players
+    "LeBron James", "Michael Jordan", "Serena Williams", "Kobe Bryant", "Tiger Woods",
+    "Cristiano Ronaldo", "Lionel Messi", "Roger Federer", "Usain Bolt", "Simone Biles",
+    "Tom Brady", "Stephen Curry", "Kevin Durant", "Giannis Antetokounmpo", "Naomi Osaka",
+    "Megan Rapinoe", "Alex Morgan", "Novak Djokovic", "Shaquille O'Neal", "Dwyane Wade",
+    "Lewis Hamilton", "Patrick Mahomes", "Conor McGregor", "Khabib Nurmagomedov", "Rafael Nadal",
+    "Sidney Crosby", "Wayne Gretzky", "Michael Phelps", "David Beckham", "Zlatan Ibrahimović",
+    "Aaron Rodgers", "Russell Wilson", "Anthony Joshua", "Canelo Alvarez", "Lamar Jackson",
+    "Derrick Rose", "Paul Pogba", "Kylian Mbappe", "Sergio Ramos", "Virgil van Dijk",
+    "James Harden", "Damian Lillard", "Luka Doncic", "Devin Booker", "Jimmy Butler",
+
+    # Music Artists
+    "Kendrick Lamar", "Beyoncé Knowles", "Rihanna Fenty", "Jay-Z Carter", "Drake Graham",
+    "Kanye West", "Taylor Swift", "Ariana Grande", "Justin Bieber", "Ed Sheeran",
+    "Bruno Mars", "Post Malone", "Travis Scott", "Cardi B", "Nicki Minaj",
+    "Dua Lipa", "The Weeknd", "Doja Cat", "Billie Eilish", "Harry Styles",
+    "Shawn Mendes", "Olivia Rodrigo", "Lil Nas X", "SZA", "Lana Del Rey",
+    "Bad Bunny", "J Balvin", "Maluma", "Karol G", "Rosalía",
+    "Future", "Young Thug", "21 Savage", "Lil Uzi Vert", "Playboi Carti",
+    "Metro Boomin", "Frank Ocean", "Childish Gambino", "Tyler, the Creator", "Trippie Redd",
+    "Megan Thee Stallion", "Gunna", "Jack Harlow", "Roddy Ricch", "Pop Smoke",
+    "XXXTentacion", "Juice WRLD", "Chris Brown", "Adele", "Lorde",
+
+    # Tech CEOs
+    "Elon Musk", "Jeff Bezos", "Mark Zuckerberg", "Tim Cook", "Sundar Pichai",
+    "Satya Nadella", "Bill Gates", "Steve Jobs", "Larry Page", "Sergey Brin",
+    "Jack Dorsey", "Evan Spiegel", "Brian Chesky", "Reed Hastings", "Daniel Ek",
+    "Drew Houston", "Stewart Butterfield", "David Baszucki", "Marc Benioff", "Michael Dell",
+    "Jensen Huang", "Patrick Collison", "John Collison", "Susan Wojcicki", "Whitney Wolfe Herd",
+    "Sheryl Sandberg", "Dara Khosrowshahi", "Andrew Jassy", "Palmer Luckey", "Jack Ma",
+    "Robin Li", "Pony Ma", "Richard Branson", "Masayoshi Son", "Peter Thiel",
+    "Travis Kalanick", "Tony Fadell", "Tim Sweeney", "Gabe Newell", "Bobby Kotick",
+    "Sam Altman", "Demis Hassabis", "Andrew Ng", "Geoffrey Hinton", "Yann LeCun",
+
+    # Mix of Celebrities
+    "Zendaya Coleman", "Kim Kardashian", "Kylie Jenner", "Kendall Jenner", "Khloe Kardashian",
+    "Kourtney Kardashian", "Kris Jenner", "Caitlyn Jenner", "Stormi Webster", "Paris Hilton",
+    "Gigi Hadid", "Bella Hadid", "Hailey Bieber", "Emily Ratajkowski", "Addison Rae", "Emma Chamberlain", "James Charles", 
+    "Noah Beck"
+]
+
 
     cleanliness_levels = ["Very Clean", "Moderate", "Messy"]
     sleep_schedules = ["Early Bird", "Night Owl", "Flexible"]
@@ -207,10 +245,10 @@ def add_mock_roommates(db: Session = Depends(get_db)):
 
 
     mock_roommates = []
-    for i in range(200):
+    for i in range(len(names)):
         roommate = {
-            "user_id": start_user_id + i,  # Assign a unique user ID
-            "name": random.choice(names) + f" {i+1}",  # Ensure name uniqueness
+            "user_id": i,  # Assign a unique user ID
+            "name": names[i],  # Ensure name uniqueness
             "budget": round(random.uniform(500, 2000), 2),  # Random budget between $500 and $2000
             "cleanliness": random.choice(cleanliness_levels),
             "sleep_schedule": random.choice(sleep_schedules),
@@ -218,7 +256,7 @@ def add_mock_roommates(db: Session = Depends(get_db)):
             "social_level": random.choice(social_levels),
             "pet_friendly": random.choice(pet_friendly_options),
             "points": random.randint(50, 100),  # Random points between 50 and 100
-            "contact": f"user{start_user_id + i}@example.com"  # Unique email
+            "contact": f"user{names[i]}@example.com"  # Unique email
         }
         mock_roommates.append(roommate)
 
