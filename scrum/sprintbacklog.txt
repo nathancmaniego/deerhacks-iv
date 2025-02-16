@@ -1,7 +1,7 @@
 priority/storypoints is how difficult it will be/time it will take
 FRONTEND
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.000 : USER : Not Started
+TYPE     : USER STORY FUS1.000 : USER : Complete
 NAME     : Find Figma Templates to base our apps front end on
 PRIORITY : 2
 ESTIMATE : 30 min    ACTUAL :
@@ -20,7 +20,7 @@ PRIORITY : 8
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.002 : markgobriel : Not Started
+TYPE     : USER STORY FUS1.002 : markgobriel : Complete
 NAME     : Build Navbar (Home, Listings, Roommates, Help?)
 PRIORITY : 6
 ESTIMATE : 2 hours   ACTUAL :
