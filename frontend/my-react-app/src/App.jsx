@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./pages/Home";
 import Listings from "./pages/Listings";
-import Roommates from "./pages/Listings";
+import ListingDetails from "./pages/ListingDetails";
+import Roommates from "./pages/Roommates";
 import Contact from "./pages/Contact";
 import "./index.css";
 
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/listings" element={<Listings />} />
+            <Route path="/listings/:id" element={<ListingDetails/>} />
             <Route path="/roommates" element={<Roommates />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

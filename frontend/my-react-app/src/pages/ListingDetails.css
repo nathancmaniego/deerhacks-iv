@@ -1,0 +1,123 @@
+.listing-details-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .listing-details-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden;
+    padding: 2rem;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #3498db;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .back-button:hover {
+    color: #2980b9;
+  }
+  
+  .listing-details-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 768px) {
+    .listing-details-content {
+      flex-direction: row;
+    }
+  }
+  
+  .listing-image-container {
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .listing-image-container {
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+  }
+  
+  .listing-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+    object-fit: cover;
+  }
+  
+  .listing-info {
+    flex: 1;
+  }
+  
+  .listing-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+  }
+  
+  .listing-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 0.75rem;
+  }
+  
+  .listing-location {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+  }
+  
+  .listing-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .listing-links {
+      flex-direction: row;
+    }
+  }
+  
+  .listing-url-button,
+  .contact-info-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.2s;
+  }
+  
+  .listing-url-button:hover,
+  .contact-info-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .loading,
+  .not-found {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 4rem;
+  }
