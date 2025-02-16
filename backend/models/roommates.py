@@ -1,9 +1,11 @@
 from sqlalchemy import Column, Integer, String, Float
-from database.database import Base  # ✅ Import `Base`
+from sqlalchemy.ext.declarative import declarative_base
 
+Base = declarative_base()
 
 class Roommate(Base):
     __tablename__ = "roommates"
+    __table_args__ = {"schema": "public"}  # Explicitly define the schema
     
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, unique=True, index=True)

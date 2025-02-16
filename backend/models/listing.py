@@ -5,7 +5,8 @@ from database.database import Base  # ✅ Import `Base`
 
 class Listing(Base):
     __tablename__ = "listings"
-    
+    __table_args__ = {"schema": "public"}  # Explicitly define the schema
+
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
     price = Column(Float, index=True)
