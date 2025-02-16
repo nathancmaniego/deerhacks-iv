@@ -14,7 +14,7 @@ PRIORITY : 1
 ESTIMATE : 10 min    ACTUAL : 15 min
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.004 : USER : Not Started
+TYPE     : USER STORY FUS1.004 : zoyafatima : Complete
 NAME     : Build Listings Page (fetch API data)
 PRIORITY : 8 
 ESTIMATE : 2 hours   ACTUAL :
