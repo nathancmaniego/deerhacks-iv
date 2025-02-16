@@ -1,0 +1,52 @@
+.roommates-container {
+    padding: 2rem;
+    color: #333;
+  }
+  
+  .roommates-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .roommates-title .your {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filters label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto 2rem auto;
+    width: 100%;
+  }
+
+  .all-roommates {
+    margin-bottom: 2rem;
+  }
+  
+  .match-results {
+    margin-top: 2rem;
+  }
+  
+  .match-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
