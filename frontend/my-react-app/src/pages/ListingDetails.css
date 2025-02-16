@@ -8,7 +8,7 @@
   }
   
   .listing-details-card {
-    background-color: white;
+    background-color: rgb(255, 250, 250);
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     width: 100%;

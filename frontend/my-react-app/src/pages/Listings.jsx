@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Listings.css'; 
 
@@ -9,11 +8,11 @@ function Listings() {
   const [searchTerm, setSearchTerm] = useState('');
   const [priceFilter, setPriceFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const listingsPerPage = 12; // You can adjust this
+  const listingsPerPage = 12;
 
     useEffect(() => {
-        // Mock listings data
-        const mockListings = [
+        // fetch instead of mock
+        const mockListings=[
           {
             "title": "2 Bedroom",
             "price": 2895,
