@@ -31,7 +31,18 @@ const roommateData = [
     study_habits: "Moderate",
     social_level: "Moderate",
     pet_friendly: "Yes",
-  },
+  }, 
+  {
+    id: 4,
+    name: "David",
+    budget: 840,
+    cleanliness: "Messy",
+    sleep_schedule: "Flexible",
+    study_habits: "Moderate",
+    social_level: "Moderate",
+    pet_friendly: "No",
+  }
+  // Add additional sample data as needed...
 ];
 
 function RoommateFilters() {
@@ -64,7 +75,6 @@ function RoommateFilters() {
           budgetMatch = roommate.budget >= min && roommate.budget <= max;
         }
       }
-      
       return (
         budgetMatch &&
         (filters.cleanliness === '' || roommate.cleanliness === filters.cleanliness) &&
@@ -166,16 +176,16 @@ function RoommateFilters() {
         <div className="match-results">
           {searchResults.length > 0 ? (
             <>
-              <h3>Top Matches:</h3>
+              <h3 className="top-matches">Here are your top matches...👀</h3>
               {searchResults.map(roommate => (
                 <div key={roommate.id} className="match-card">
                   <h4>{roommate.name}</h4>
-                  <p>Budget: ${roommate.budget}</p>
-                  <p>Cleanliness: {roommate.cleanliness}</p>
-                  <p>Sleep: {roommate.sleep_schedule}</p>
-                  <p>Study: {roommate.study_habits}</p>
-                  <p>Social: {roommate.social_level}</p>
-                  <p>Pet Friendly: {roommate.pet_friendly}</p>
+                  <p><strong>Budget:</strong> ${roommate.budget}</p>
+                  <p><strong>Cleanliness:</strong> {roommate.cleanliness}</p>
+                  <p><strong>Sleep:</strong> {roommate.sleep_schedule}</p>
+                  <p><strong>Study:</strong> {roommate.study_habits}</p>
+                  <p><strong>Social:</strong> {roommate.social_level}</p>
+                  <p><strong>Pet Friendly:</strong> {roommate.pet_friendly}</p>
                   <p className="match-score">100% Match</p>
                 </div>
               ))}
