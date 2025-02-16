@@ -172,7 +172,7 @@ def match_roommates(preferences: RoommatePreference, db: Session = Depends(get_d
         query = query.filter(Roommate.pet_friendly == preferences.pet_friendly)
 
     # Get top 3 matches
-    matches = query.limit(3).all()
+    matches = query.all()
 
     return {"matches": matches}
 

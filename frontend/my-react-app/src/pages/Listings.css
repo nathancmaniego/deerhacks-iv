@@ -59,14 +59,18 @@
     cursor: pointer;
     border-radius: 4px;
     font-size: 0.9rem; /* Slightly smaller font size */
+    color: #000000;
 }
 
 .pagination button:hover {
-    background-color: #ddd;
+    background-color: #b6d5ff;
 }
 
 .pagination .active {
-    background-color: #4CAF50;
+    background-color: #023684;
     color: white;
-    border-color: #4CAF50;
+    border-color: #023684;
+}
+.w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 {
+    color: #e44d26; /* Change this to your desired color */
 }
