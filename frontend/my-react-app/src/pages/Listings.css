@@ -5,7 +5,6 @@
     overflow-y: auto; /* Enable vertical scroll if content overflows */
 }
 
-/* Main header inside listings container */
 .listings-container h1 {
     color: #213547;
     text-align: center;
@@ -82,4 +81,41 @@
 .price-filter{
     color: #000;
     background-color: #fffafa;
+}
+.search-bar {
+    width: 100%;
+    padding-left: 35px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #213547 !important;
+    background-color: white;
+    position: relative; 
+    text-indent: 20px; 
+}
+
+.search-bar::placeholder {
+    color: #6b7280;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.relative {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.absolute {
+    position: absolute;
+    left: 10px; 
+    top: 44%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    z-index: 2; 
+    pointer-events: none; 
 }
