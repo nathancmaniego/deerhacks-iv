@@ -21,7 +21,6 @@ app.add_middleware(
 # Include API Routes
 app.include_router(roommates.router, prefix="/api", tags=["Roommates"])
 app.include_router(listing.router, prefix="/api", tags=["Listings"])
-# app.include_router(scrape.router, prefix="/api", tags=["Scraping"])
 
 @app.get("/")
 def home():

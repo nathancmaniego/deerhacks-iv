@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Home from "./pages/home";
-import Listings from "./pages/listings";
-import Roommates from "./pages/roommates";
-import Contact from "./pages/contact";
+import Home from "./pages/Home";
+import Listings from "./pages/Listings";
+import Roommates from "./pages/Roommates";
+import Contact from "./pages/Contact";
 import ListingDetails from "./pages/ListingDetails"
 import "./index.css";
 

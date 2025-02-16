@@ -1,0 +1,19 @@
+
+const API_BASE_URL = "https://deerhacks-fast-api.onrender.com/api"; // Update with your Render URL
+
+const fetchListings = async () => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/listings`);
+        const data = await response.json();
+        console.log("Listings:", data);
+        return data;
+    } catch (error) {
+        console.error("Error fetching listings:", error);
+    }
+};
+
+// Run the function and ensure the Promise resolves
+(async () => {
+    const listings = await fetchListings();
+    console.log("Final Listings:", listings);
+})();
