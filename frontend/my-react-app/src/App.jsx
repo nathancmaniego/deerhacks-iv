@@ -14,7 +14,7 @@ function AppContent() {
   let backgroundClass = '';
   switch (location.pathname) {
     case '/listings':
-      backgroundClass = 'bg-gradient-to-r from-blue-400 to-blue-700';
+      backgroundClass = 'bg-white';
       break;
     case '/roommates':
       backgroundClass = 'bg-white';
