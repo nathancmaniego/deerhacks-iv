@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from database.database import engine, Base
 from routes import roommates, listing
 
@@ -8,10 +9,18 @@ Base.metadata.create_all(bind=engine)
 # Initialize FastAPI App
 app = FastAPI()
 
-# Include API Routes
+# ✅ Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all domains (update for security)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
+
+# ✅ Include API Routes
 app.include_router(roommates.router, prefix="/api", tags=["Roommates"])
 app.include_router(listing.router, prefix="/api", tags=["Listings"])
-# app.include_router(scrape.router, prefix="/api", tags=["Scraping"])
 
 @app.get("/")
 def home():
