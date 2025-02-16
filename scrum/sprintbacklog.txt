@@ -16,13 +16,13 @@ ESTIMATE : 10 min    ACTUAL : 15 min
 --------------------------------------------------------------------------
 TYPE     : USER STORY FUS1.004 : zoyafatima : Complete
 NAME     : Build Listings Page (fetch API data)
-PRIORITY : 8 
+PRIORITY : 8
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY FUS1.002 : markgobriel : Not Started
 NAME     : Build Navbar (Home, Listings, Roommates, Help?)
-PRIORITY : 6 
+PRIORITY : 6
 ESTIMATE : 2 hours   ACTUAL :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -96,23 +96,23 @@ ESTIMATE : 1 hour   ACTUAL : 1 hour
 TYPE     : USER STORY BUS1.002 : USER : ethanalindogan COMPLETED
 NAME     : Create Listing API
 PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
+ESTIMATE : 2 hours   ACTUAL : 2 hours
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY BUS1.003 : USER : nathanmaniego 
+TYPE     : USER STORY BUS1.003 : USER : nathanmaniego  Completed
 NAME     : Search and Filter Logic
 PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
+ESTIMATE : 2 hours   ACTUAL : 1 hour
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY BUS1.004 : USER : nathanmaniego COMPLETED
 NAME     : Create Roommate matching api
 PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
+ESTIMATE : 2 hours   ACTUAL : 1 hour
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY BUS1.005 : USER : nathanmaniego COMPLETED
 NAME     : Set up Database (PostgreSQL)
 PRIORITY : 5
-ESTIMATE : 2 hours   ACTUAL :
+ESTIMATE : 2 hours   ACTUAL : 1 hour
 --------------------------------------------------------------------------
