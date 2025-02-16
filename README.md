@@ -14,7 +14,7 @@ Due to fragmented and unreliable platforms, students struggle to find safe, affo
 
 ### 🔹 Why Dormigo Works:
 - ✅ **Aggregated Listings:** Combines data from Zillow and Toronto Rentals into one platform.
-- ✅ **Smart Filtering & Search:** Quickly sort by rent, location, and lease type, while filtering by price.
+- ✅ **Smart Filtering & Search:** Quickly sort by rent, location, lease type, while filtering by price.
 - ✅ **Roommate Matching:** Matches students based on lifestyle habits, sleep schedules, study preferences, and cleanliness levels.
 
 ## 🎯 Core Features for MVP
@@ -30,10 +30,10 @@ Due to fragmented and unreliable platforms, students struggle to find safe, affo
   - React + Vite  
   - Tailwind CSS
 - **Backend:**  
-  - Flask / FastAPI  
-  - PostgreSQL / Firebase
+  - Python & FastAPI  
+  - PostgreSQL
 - **Data Collection:**  
-  - Scrapy / BeautifulSoup (for Zillow & Toronto Rentals scraping)
+  - BeautifulSoup and Selenium (for Zillow & Toronto Rentals scraping)
 
 ## 🧐 Meaning Behind the Name
 
@@ -53,7 +53,7 @@ We were inspired by the real‑life challenges students face when searching for 
 Through this project, we gained valuable insights into full‑stack development, integrating web scraping with modern web frameworks, and building a user‑friendly interface. We learned the importance of validating diverse data sources and creating an intuitive search experience that builds trust among users.
 
 **How We Built the Project:**  
-We began by outlining the key issues in the student housing market and prototyping a solution. We then set up a backend with FastAPI and PostgreSQL to manage data, implemented web scraping tools like Scrapy and BeautifulSoup for data collection from Zillow and Toronto Rentals, and built the frontend using React, Vite, and Tailwind CSS. Roommate matching was implemented based on user‑specified lifestyle preferences to help connect students with like‑minded roommates.
+We began by outlining the key issues in the student housing market and prototyping a solution. We then set up a backend using Python and FastAPI along with PostgreSQL for data management, and implemented data collection using BeautifulSoup and Selenium to scrape Zillow and Toronto Rentals. Finally, we built the frontend using React, Vite, and Tailwind CSS. Roommate matching was implemented based on user‑specified lifestyle preferences to help connect students with like‑minded roommates.
 
 **Challenges Faced:**  
 One of the biggest challenges was dealing with inconsistent data formats across multiple listing sources and ensuring data freshness. Additionally, fine‑tuning the roommate matching algorithm to deliver accurate matches required extensive testing and iteration. Balancing these technical challenges while maintaining a smooth user experience was a significant learning curve for us.
