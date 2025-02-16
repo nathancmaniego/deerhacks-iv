@@ -30,7 +30,7 @@ function Listings() {
               const data = await response.json();
               console.log("Fetched data:", data);
   
-              setListings(data);
+              setListings(data.listings);
           } catch (err) {
               console.error("Fetch error:", err.message);
               setError(`Error fetching listings: ${err.message}`);
