@@ -68,10 +68,16 @@ PRIORITY : 2
 ESTIMATE : 1 hour   ACTUAL : 1 hour
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.011 : markgobriel : Not Started
+TYPE     : USER STORY FUS1.011 : markgobriel : Complete
 NAME     : Contact page
 PRIORITY : 2
-ESTIMATE : 1 hour   ACTUAL : 
+ESTIMATE : 1 hour   ACTUAL : 30 minutes
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.012: markgobriel : Not Started
+NAME     : Different background on different pages
+PRIORITY : 2
+ESTIMATE : 15 minutes   ACTUAL :
 --------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
