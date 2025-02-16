@@ -27,6 +27,9 @@ function Navbar() {
           <li className="p-3 hover:underline hover:decoration-2 hover:underline-offset-4 transition-all cursor-pointer">
             <Link to="/contact" className="text-black hover:text-black visited:text-black">Contact</Link>
           </li>
+          <li className="p-3 transition-all cursor-pointer">
+            <Link to="/signup" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Sign Up</Link>
+          </li>
         </ul>
 
         {/* <i className="bx bx-menu xl:hidden block text-5xl cursor-pointer" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}></i> */}
@@ -58,6 +61,12 @@ function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             <Link to="/contact" className="text-white hover:text-white visited:text-white">Contact</Link>
+          </li>
+          <li
+            className="p-3 cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <Link to="/signup" className="bg-blue-500 text-white px-4 py-2 rounded-md inline-block hover:bg-blue-600 transition-colors">Sign Up</Link>
           </li>
         </ul>
       )}

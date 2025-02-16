@@ -42,3 +42,15 @@
 .read-the-docs {
   color: #888;
 }
+.signup-link {
+  background-color: #000000;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.signup-link:hover {
+  background-color: #2980b9;
+  text-decoration: none;
+}

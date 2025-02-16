@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import Listings from "./pages/Listings";
 import Roommates from "./pages/Roommates";
 import Contact from "./pages/Contact";
-import ListingDetails from "./pages/ListingDetails"
+import ListingDetails from "./pages/ListingDetails";
+import Signup from "./pages/Signup";
 import "./index.css";
 
 function AppContent() {
@@ -37,6 +38,7 @@ function AppContent() {
           <Route path="/listings/:id" element={<ListingDetails />} />
           <Route path="/roommates" element={<Roommates />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup/>}/>
         </Routes>
       </main>
     </div>
