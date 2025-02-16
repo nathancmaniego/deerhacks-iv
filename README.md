@@ -2,41 +2,38 @@
 **Project Website:** https://deerhacks-iv--kappa.vercel.app/
 
 ## 🚀 Theme: Discovery
-**💡 Idea:** A one-stop platform that helps students discover rental listings and roommates by aggregating Facebook Marketplace, Kijiji, and university housing listings—all while using AI-powered roommate matching and trust scoring to reduce scams.
+**💡 Idea:** A one‑stop platform that helps students discover rental listings and roommates by aggregating listings from Zillow and Toronto Rentals—all while using roommate matching and trust scoring to reduce scams.
 
 ## The Problem: Student Housing is Broken
 Due to fragmented and unreliable platforms, students struggle to find safe, affordable, and convenient housing. Current options are inefficient, resulting in wasted time, scams, and difficulty finding roommates.
 
 ### 1️⃣ Housing Listings are Scattered & Messy
-- Students search across Facebook Marketplace, Kijiji, university portals, and random landlord websites.
-- Listings are duplicated, outdated, or missing key details (e.g., utilities, furnished status).
+- Students search across multiple websites such as Zillow and Toronto Rentals.
+- Listings are often duplicated, outdated, or missing key details (e.g., utilities, furnished status).
 - No smart search—students must manually filter through dozens of unrelated listings.
 
-### 🔹 Why UniHousing Hub Works:
-- ✅ **Aggregated Listings:** Combines data from Facebook, Kijiji, and university portals into one platform.
-- ✅ **Smart Filtering & AI Search:** Quickly sort by rent, location, lease type, and amenities.
-- ✅ **Interactive Map:** View listings by proximity to campus and transit options.
+### 🔹 Why Dormigo Works:
+- ✅ **Aggregated Listings:** Combines data from Zillow and Toronto Rentals into one platform.
+- ✅ **Smart Filtering & Search:** Quickly sort by rent, location, and lease type, while filtering by price.
+- ✅ **Roommate Matching:** Matches students based on lifestyle habits, sleep schedules, study preferences, and cleanliness levels.
 
 ## 🎯 Core Features for MVP
 1. **🔍 Aggregated Housing Listings**  
-   Scrapes Facebook Marketplace and Kijiji to display rental and sublet listings in one place.
-2. **📍 Interactive Map Search**  
-   Allows users to filter by price, location, lease type (sublet, short-term, long-term), and amenities.
-3. **🤝 AI-Powered Roommate Matching**  
+   Scrapes Zillow and Toronto Rentals to display rental and sublet listings in one place.
+2. **📍 Location Search & Price Filtering**  
+   Allows users to search listings by location and filter by price.
+3. **🤝 Roommate Matching**  
    Matches students based on lifestyle habits, sleep schedules, study preferences, and cleanliness levels.
 
 ## ⚙️ Tech Stack
 - **Frontend:**  
-  - React + Vite 
-  - Tailwind CSS  
-  - Google Maps API
+  - React + Vite  
+  - Tailwind CSS
 - **Backend:**  
   - Flask / FastAPI  
   - PostgreSQL / Firebase
 - **Data Collection:**  
-  - Scrapy / BeautifulSoup (for Facebook & Kijiji scraping)
-- **AI Features:**  
-  - NLP (spaCy) for roommate matching
+  - Scrapy / BeautifulSoup (for Zillow & Toronto Rentals scraping)
 
 ## 🧐 Meaning Behind the Name
 
@@ -45,4 +42,18 @@ Due to fragmented and unreliable platforms, students struggle to find safe, affo
 - **Dorm:** Reflects the core focus on student housing—dormitories and other student living spaces.
 - **Amigo:** Spanish for "friend," conveying the platform's commitment to creating a friendly, trustworthy community where students can find reliable roommates and feel at home.
 
-Together, Dormigo suggests a supportive, community-driven environment that not only helps you find a place to live but also connects you with like-minded roommates—making the often challenging search for safe and affordable student housing a more personal and reassuring experience.
+Together, Dormigo suggests a supportive, community‑driven environment that helps you find a place to live and connects you with like‑minded roommates—making the often challenging search for safe and affordable student housing a more personal and reassuring experience.
+
+## 🌟 Inspiration & Reflection
+
+**Inspiration:**  
+We were inspired by the real‑life challenges students face when searching for safe and affordable housing, as well as the difficulty in finding compatible roommates. We wanted to create a solution that not only aggregates listings from various sources but also makes the roommate matching process simple and reliable.
+
+**What We Learned:**  
+Through this project, we gained valuable insights into full‑stack development, integrating web scraping with modern web frameworks, and building a user‑friendly interface. We learned the importance of validating diverse data sources and creating an intuitive search experience that builds trust among users.
+
+**How We Built the Project:**  
+We began by outlining the key issues in the student housing market and prototyping a solution. We then set up a backend with FastAPI and PostgreSQL to manage data, implemented web scraping tools like Scrapy and BeautifulSoup for data collection from Zillow and Toronto Rentals, and built the frontend using React, Vite, and Tailwind CSS. Roommate matching was implemented based on user‑specified lifestyle preferences to help connect students with like‑minded roommates.
+
+**Challenges Faced:**  
+One of the biggest challenges was dealing with inconsistent data formats across multiple listing sources and ensuring data freshness. Additionally, fine‑tuning the roommate matching algorithm to deliver accurate matches required extensive testing and iteration. Balancing these technical challenges while maintaining a smooth user experience was a significant learning curve for us.
