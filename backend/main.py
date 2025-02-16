@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from database.database import engine, Base
 from routes import roommates, listing
 
@@ -7,6 +8,15 @@ Base.metadata.create_all(bind=engine)
 
 # Initialize FastAPI App
 app = FastAPI()
+
+# Enable CORS for your frontend (localhost:5173)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # You can also use ["*"] for testing
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Include API Routes
 app.include_router(roommates.router, prefix="/api", tags=["Roommates"])
