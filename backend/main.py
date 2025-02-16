@@ -9,16 +9,16 @@ Base.metadata.create_all(bind=engine)
 # Initialize FastAPI App
 app = FastAPI()
 
-# Enable CORS for your frontend (localhost:5173)
+# ✅ Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # You can also use ["*"] for testing
+    allow_origins=["*"],  # Allow all domains (update for security)
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
-# Include API Routes
+# ✅ Include API Routes
 app.include_router(roommates.router, prefix="/api", tags=["Roommates"])
 app.include_router(listing.router, prefix="/api", tags=["Listings"])
 

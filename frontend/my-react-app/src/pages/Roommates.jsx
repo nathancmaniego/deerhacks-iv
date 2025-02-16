@@ -5,7 +5,7 @@ import './Roommates.css';
 function Roommates() {
   const [roommates, setRoommates] = useState([]);
   const [searchResults, setSearchResults] = useState(null);
-
+  const [isFiltered, setIsFiltered] = useState(false);
   const [filters, setFilters] = useState({
     budget: '',
     cleanliness: '',
@@ -15,35 +15,91 @@ function Roommates() {
     pet_friendly: '',
   });
 
+  // Fetch all roommates on component mount
   useEffect(() => {
-    axios
-      .get('https://deerhacks-fast-api.onrender.com/api/roommates')
+    axios.get('https://deerhacks-fast-api.onrender.com/api/roommates')
       .then((res) => {
         console.log('All roommates:', res.data);
         setRoommates(res.data);
+        setSearchResults(res.data);
       })
       .catch((err) => {
         console.error('Error fetching roommates:', err);
       });
   }, []);
 
+  // Handle filter changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFilters((prev) => ({ ...prev, [name]: value }));
+    setFilters(prev => ({ ...prev, [name]: value }));
   };
 
+  // Convert budget range string into an object with min and max values
+  const transformBudget = (budgetStr) => {
+    if (!budgetStr) return null;
+    if (budgetStr.includes("-")) {
+      const [minStr, maxStr] = budgetStr.replace(/\$/g, "").split("-");
+      const min = parseFloat(minStr);
+      const max = parseFloat(maxStr);
+      console.log(`Transforming budget ${budgetStr} to range:`, { min, max });
+      return { min, max };
+    } else if (budgetStr === "1500+") {
+      // Return range with no upper limit.
+      console.log(`Transforming budget ${budgetStr} to range:`, { min: 1500, max: Infinity });
+      return { min: 1500, max: Infinity };
+    }
+    return null;
+  };
+
+  // Send filters to the API for matching, then perform client-side budget filtering
   const handleSearch = () => {
-    axios
-      .post('https://deerhacks-fast-api.onrender.com/api/roommates/match', filters)
+    // Build payload using only non-empty filter values (excluding budget for now)
+    const payload = {};
+    if (filters.cleanliness) payload.cleanliness = filters.cleanliness;
+    if (filters.sleep_schedule) payload.sleep_schedule = filters.sleep_schedule;
+    if (filters.study_habits) payload.study_habits = filters.study_habits;
+    if (filters.social_level) payload.social_level = filters.social_level;
+    if (filters.pet_friendly) payload.pet_friendly = filters.pet_friendly;
+    
+    console.log('Payload being sent (excluding budget):', payload);
+    
+    // If no filters are applied and no budget filter is set, show all roommates.
+    if (Object.keys(payload).length === 0 && !filters.budget) {
+      setIsFiltered(false);
+      setSearchResults(roommates);
+      return;
+    }
+    
+    setIsFiltered(true);
+    axios.post('https://deerhacks-fast-api.onrender.com/api/roommates/match', payload)
       .then((res) => {
-        console.log('Match results:', res.data);
-        setSearchResults(res.data);
+        console.log('Match results (raw):', res.data);
+        let results = res.data.matches ? res.data.matches : res.data;
+        
+        // If a budget filter is applied, further filter the results client-side.
+        if (filters.budget) {
+          const range = transformBudget(filters.budget);
+          if (range) {
+            results = results.filter(rm => {
+              const bud = parseFloat(rm.budget);
+              return bud >= range.min && bud <= range.max;
+            });
+          }
+        }
+        
+        console.log('Filtered results:', results);
+        setSearchResults(results);
       })
       .catch((err) => {
         console.error('Error matching roommates:', err);
+        if (err.response) {
+          console.error('Response data:', err.response.data);
+          console.error('Response status:', err.response.status);
+        }
       });
   };
 
+  // Reset filters and show all roommates (as if no filters applied)
   const handleReset = () => {
     setFilters({
       budget: '',
@@ -53,14 +109,16 @@ function Roommates() {
       social_level: '',
       pet_friendly: '',
     });
-    setSearchResults(null);
+    setIsFiltered(false);
+    setSearchResults(roommates);
   };
 
   return (
     <div className="roommates-container">
-      <h2 className="roommates-title">
-        Find <span className="your">your</span> roommate match.
-      </h2>
+      {/* Static Page Title */}
+        <h2 className="roommates-title">
+            Find <span className="your">your</span> roommate match.
+        </h2>
 
       {/* Filters */}
       <div className="filters">
@@ -68,13 +126,12 @@ function Roommates() {
           Budget:
           <select name="budget" value={filters.budget} onChange={handleChange}>
             <option value="">Any</option>
-            <option value="0-100">0-100</option>
-            <option value="101-200">101-200</option>
-            <option value="201-300">201-300</option>
-            <option value="301-400">301-400</option>
-            <option value="401-500">401-500</option>
-            <option value="501-600">501-600</option>
-            <option value="600+">600+</option>
+            <option value="$0-$400">$0-$400</option>
+            <option value="$401-$600">$401-$600</option>
+            <option value="$601-$800">$601-$800</option>
+            <option value="$801-$1000">$801-$1000</option>
+            <option value="$1001-$1500">$1001-$1500</option>
+            <option value="1500+">$1500+</option>
           </select>
         </label>
         <label>
@@ -124,37 +181,43 @@ function Roommates() {
       </div>
 
       {/* Buttons */}
-      <div className="buttons">
-        <button onClick={handleSearch}>Find Me a Match</button>
-        <button onClick={handleReset}>Reset</button>
+      <div className="button-container">
+        <button className="match-button" onClick={handleSearch}>
+          Find Me a Match
+        </button>
+        <button className="reset-button" onClick={handleReset}>
+          Reset
+        </button>
       </div>
 
-      {/* Display All Roommates (Optional) */}
-      <div className="all-roommates">
-        <h3>All Roommates:</h3>
-        <ul>
-          {roommates.map((rm) => (
-            <li key={rm.id}>
-              {rm.name} — Budget: {rm.budget}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Display All Roommates if no search has been performed */}
+      {searchResults === null && (
+        <div className="all-roommates">
+          <h3>All Roommates:</h3>
+          <ul>
+            {roommates.map((rm) => (
+              <li key={rm.id}>
+                {rm.name} — Budget: {rm.budget}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
-      {/* Search Results */}
-      {searchResults && (
+      {/* Display Search Results */}
+      {searchResults !== null && (
         <div className="match-results">
-          <h3>Top Matches:</h3>
+          <h3>{ isFiltered ? "We've found your top matches...👀" : "All potential roommates..." }</h3>
           {searchResults.length > 0 ? (
             searchResults.map((rm) => (
               <div key={rm.id} className="match-card">
                 <h4>{rm.name}</h4>
-                <p>Budget: {rm.budget}</p>
-                <p>Cleanliness: {rm.cleanliness}</p>
-                <p>Sleep: {rm.sleep_schedule}</p>
-                <p>Study: {rm.study_habits}</p>
-                <p>Social: {rm.social_level}</p>
-                <p>Pet Friendly: {rm.pet_friendly}</p>
+                <p><strong>Budget:</strong> {rm.budget}</p>
+                <p><strong>Cleanliness:</strong> {rm.cleanliness}</p>
+                <p><strong>Sleep:</strong> {rm.sleep_schedule}</p>
+                <p><strong>Study:</strong> {rm.study_habits}</p>
+                <p><strong>Social:</strong> {rm.social_level}</p>
+                <p><strong>Pet Friendly:</strong> {rm.pet_friendly}</p>
               </div>
             ))
           ) : (

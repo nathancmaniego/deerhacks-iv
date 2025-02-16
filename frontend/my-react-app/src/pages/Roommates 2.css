@@ -40,17 +40,7 @@
   }
   
   .match-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-  .match-results h3 {
-    font-size: 1.5rem !important;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
   }
   
   .match-card {
