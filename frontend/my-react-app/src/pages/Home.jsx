@@ -24,7 +24,7 @@ function Home() {
       </div>
       <div className="home-bottom">
         <p className="home-bottom-text">
-          Welcome to our platform. Discover rental listings and roommates by aggregating Facebook Marketplace, Kijiji, and university housing listings.
+          Welcome to our platform. Discover rental listings and roommates by aggregating Zillow and Toronto Rentals listings, all in one place.
         </p>
       </div>
     </div>
