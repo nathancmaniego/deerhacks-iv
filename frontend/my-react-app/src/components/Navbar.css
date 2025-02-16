@@ -1,0 +1,8 @@
+header {
+    text-transform: uppercase;
+    font-weight: 900 !important;
+  }
+  
+header ul li {
+    font-weight: 700 !important;
+  }
