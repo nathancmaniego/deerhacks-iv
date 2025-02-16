@@ -74,10 +74,10 @@ PRIORITY : 2
 ESTIMATE : 1 hour   ACTUAL : 30 minutes
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY FUS1.012: markgobriel : Not Started
+TYPE     : USER STORY FUS1.012: markgobriel : Complete
 NAME     : Different background on different pages
 PRIORITY : 2
-ESTIMATE : 15 minutes   ACTUAL :
+ESTIMATE : 15 minutes   ACTUAL : 15 minutes
 --------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
