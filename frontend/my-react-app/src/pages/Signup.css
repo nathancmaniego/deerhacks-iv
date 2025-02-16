@@ -1,133 +1,133 @@
 .signup-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: white;
+}
+
+.signup-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #1D4ED8;
+  border-radius: 50%;
+  outline: none;
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+  border-color: #1D4ED8;
+}
+
+.radio-group input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #1D4ED8;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.15s;
+}
+
+.radio-group input[type="radio"]:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@supports not ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+  .radio-group input[type="radio"] {
+    accent-color: #1D4ED8;
   }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #444;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+}
+
+.roommate-preferences {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  color: #333;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #60A5FA;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 2rem;
+}
+
+.submit-button:hover {
+  background-color: #1D4ED8;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 1rem;
   }
   
   .radio-group {
-    display: flex;
-    gap: 2rem;
-    margin-top: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  
-  .radio-group label {
-    display: flex;
-    align-items: center;
-    font-weight: normal;
-    cursor: pointer;
-  }
-  
-  /* Apply these styles for modern browsers */
-.radio-group input[type="radio"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    outline: none;
-    margin-right: 8px;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .radio-group input[type="radio"]:checked {
-    border-color: rgb(199, 102, 192);
-  }
-  
-  .radio-group input[type="radio"]:before {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: rgb(199, 102, 192);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.15s;
-  }
-  
-  .radio-group input[type="radio"]:checked:before {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  
-  /* Fallback for older browsers */
-  @supports not ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
-    .radio-group input[type="radio"] {
-      accent-color: rgb(199, 102, 192);
-    }
-  }
-  
-  .roommate-preferences {
-    border-top: 1px solid #eee;
-    padding-top: 1rem;
-    color: #333;
-  }
-  
-  .submit-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 2rem;
-  }
-  
-  .submit-button:hover {
-    background-color: #2980b9;
-  }
-  
-  @media (max-width: 768px) {
-    .signup-container {
-      padding: 1rem;
-    }
-    
-    .radio-group {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  }
+}

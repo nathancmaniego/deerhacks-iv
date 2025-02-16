@@ -28,7 +28,12 @@ function Navbar() {
             <Link to="/contact" className="text-black hover:text-black visited:text-black">Contact</Link>
           </li>
           <li className="p-3 transition-all cursor-pointer">
-            <Link to="/signup" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Sign Up</Link>
+            <Link 
+              to="/signup" 
+              className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white transition-colors"
+            >
+              Sign Up
+            </Link>
           </li>
         </ul>
 
@@ -66,7 +71,12 @@ function Navbar() {
             className="p-3 cursor-pointer"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <Link to="/signup" className="bg-blue-500 text-white px-4 py-2 rounded-md inline-block hover:bg-blue-600 transition-colors">Sign Up</Link>
+<Link 
+  to="/signup" 
+  className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md inline-block transition-colors hover:bg-blue-500 hover:text-white !important"
+>
+  Sign Up
+</Link>
           </li>
         </ul>
       )}

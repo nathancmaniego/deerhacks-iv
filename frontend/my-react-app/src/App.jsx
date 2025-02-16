@@ -23,6 +23,9 @@ function AppContent() {
     case '/contact':
       backgroundClass = 'bg-white';
       break;
+      case '/signup':
+        backgroundClass = 'bg-white';
+        break;
     default:
       backgroundClass = 'bg-gradient-to-r from-blue-400 to-blue-700';
       break;

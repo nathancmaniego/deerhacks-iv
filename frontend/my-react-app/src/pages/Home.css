@@ -46,6 +46,8 @@
 .home-title {
   font-size: 5rem;  /* Bigger title */
   font-weight: bold;
+  color: white;
+  text-align: left;
   margin-bottom: 1rem;
 }
 
