@@ -1,28 +1,51 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Home from "./pages/Home";
-import Listings from "./pages/Listings";
-import ListingDetails from "./pages/ListingDetails";
-import Roommates from "./pages/Roommates";
-import Contact from "./pages/Contact";
+import Home from "./pages/home";
+import Listings from "./pages/listings";
+import Roommates from "./pages/roommates";
+import Contact from "./pages/contact";
 import "./index.css";
+
+function AppContent() {
+  const location = useLocation();
+
+  let backgroundClass = '';
+  switch (location.pathname) {
+    case '/listings':
+      backgroundClass = 'bg-gradient-to-r from-blue-400 to-blue-700';
+      break;
+    case '/roommates':
+      backgroundClass = 'bg-white';
+      break;
+    case '/contact':
+      backgroundClass = 'bg-white';
+      break;
+    default:
+      backgroundClass = 'bg-gradient-to-r from-blue-400 to-blue-700';
+      break;
+  }
+
+  return (
+    <div className={`w-full min-h-screen ${backgroundClass}`}>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/listings" element={<Listings />} />
+          <Route path="/listings/:id" element={<ListingDetails />} />
+          <Route path="/roommates" element={<Roommates />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <div className='w-full min-h-screen bg-gradient-to-r from-blue-400 to-blue-700'>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/listings" element={<Listings />} />
-            <Route path="/listings/:id" element={<ListingDetails/>} />
-            <Route path="/roommates" element={<Roommates />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-      </div>
+      <AppContent />
     </BrowserRouter>
   );
 }

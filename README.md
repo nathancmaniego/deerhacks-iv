@@ -1,10 +1,10 @@
-# 🏡 UniHousing Hub – Hackathon Project Summary
+# 🏡 Dormigo – Hackathon Project Summary
 
 ## 🚀 Theme: Discovery
 **💡 Idea:** A one-stop platform that helps students discover rental listings and roommates by aggregating Facebook Marketplace, Kijiji, and university housing listings—all while using AI-powered roommate matching and trust scoring to reduce scams.
 
 ## The Problem: Student Housing is Broken
-Students struggle to find safe, affordable, and convenient housing due to fragmented and unreliable platforms. Current options are inefficient, resulting in wasted time, scams, and difficulty finding roommates.
+Due to fragmented and unreliable platforms, students struggle to find safe, affordable, and convenient housing. Current options are inefficient, resulting in wasted time, scams, and difficulty finding roommates.
 
 ### 1️⃣ Housing Listings are Scattered & Messy
 - Students search across Facebook Marketplace, Kijiji, university portals, and random landlord websites.
@@ -36,3 +36,12 @@ Students struggle to find safe, affordable, and convenient housing due to fragme
   - Scrapy / BeautifulSoup (for Facebook & Kijiji scraping)
 - **AI Features:**  
   - NLP (spaCy) for roommate matching
+
+## 🧐 Meaning Behind the Name
+
+**Dormigo** is a fusion of two words: **Dorm** + **Amigo**.
+
+- **Dorm:** Reflects the core focus on student housing—dormitories and other student living spaces.
+- **Amigo:** Spanish for "friend," conveying the platform's commitment to creating a friendly, trustworthy community where students can find reliable roommates and feel at home.
+
+Together, Dormigo suggests a supportive, community-driven environment that not only helps you find a place to live but also connects you with like-minded roommates—making the often challenging search for safe and affordable student housing a more personal and reassuring experience.

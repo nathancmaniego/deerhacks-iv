@@ -4,6 +4,7 @@ from models.roommates import Roommate
 from database.database import get_db
 from pydantic import BaseModel
 from typing import List, Optional
+import random
 
 router = APIRouter()
 
@@ -145,12 +146,12 @@ def add_mock_roommates(db: Session = Depends(get_db)):
 
 # Define the input model for roommate matching
 class RoommatePreference(BaseModel):
-    budget: Optional[float] = None
-    cleanliness: Optional[str] = None
-    sleep_schedule: Optional[str] = None
-    study_habits: Optional[str] = None
-    social_level: Optional[str] = None
-    pet_friendly: Optional[str] = None
+    budget: Optional[float] = None # 0 - infty
+    cleanliness: Optional[str] = None # "Very Clean", "Moderate", "Messy"
+    sleep_schedule: Optional[str] = None # "Early Bird", "Night Owl", "Flexible"
+    study_habits: Optional[str] = None # "Quiet", "Moderate", "Noisy"
+    social_level: Optional[str] = None  # "Introvert", "Extrovert", "Moderate"
+    pet_friendly: Optional[str] = None # "Yes", "No"
 
 @router.post("/roommates/match")
 def match_roommates(preferences: RoommatePreference, db: Session = Depends(get_db)):
@@ -174,3 +175,59 @@ def match_roommates(preferences: RoommatePreference, db: Session = Depends(get_d
     matches = query.limit(3).all()
 
     return {"matches": matches}
+
+@router.get("/roommates")
+def get_listings(db: Session = Depends(get_db)):
+    return db.query(Roommate).all()
+
+@router.post("/roommates/mock/200")
+def add_mock_roommates(db: Session = Depends(get_db)):
+    max_user_id = db.query(Roommate.user_id).order_by(Roommate.user_id.desc()).first()
+
+    # If the database is empty, start from 1, otherwise start from max_user_id + 1
+    start_user_id = max_user_id[0] + 1 if max_user_id else 1
+
+    # Lists of possible values for each attribute
+    names = ["Alice Johnson", "Bob Smith", "Charlie Brown", "Diana Prince", "Ethan Hunt",
+            "Fiona Carter", "George Wilson", "Hannah Baker", "Ian Wright", "Julia Roberts",
+            "Kevin Hart", "Liam Anderson", "Mia Clark", "Noah Thompson", "Olivia White",
+            "Paul Adams", "Quinn Johnson", "Ryan Lewis", "Sophia Martinez", "Tom Hardy",
+            "Uma Thurman", "Vin Diesel", "Will Smith", "Xavier Brown", "Yara Shahidi",
+            "LeBron James", "Kendrick Lamar", "Zendaya Coleman", "Michael Jordan", "Serena Williams",
+            "Kobe Bryant", "Beyonce Knowles", "Rihanna Fenty", "Jay-Z Carter", "Drake Graham",
+            "Kanye West", "Kim Kardashian", "Kylie Jenner", "Kendall Jenner", "Travis Scott",
+            "Kourtney Kardashian", "Khloe Kardashian", "Kris Jenner", "Caitlyn Jenner", "Stormi Webster"
+            ]  # Add more names
+
+    cleanliness_levels = ["Very Clean", "Moderate", "Messy"]
+    sleep_schedules = ["Early Bird", "Night Owl", "Flexible"]
+    study_habits = ["Quiet", "Moderate", "Noisy"]
+    social_levels = ["Introvert", "Moderate", "Extrovert"]
+    pet_friendly_options = ["Yes", "No"]
+
+
+    mock_roommates = []
+    for i in range(200):
+        roommate = {
+            "user_id": start_user_id + i,  # Assign a unique user ID
+            "name": random.choice(names) + f" {i+1}",  # Ensure name uniqueness
+            "budget": round(random.uniform(500, 2000), 2),  # Random budget between $500 and $2000
+            "cleanliness": random.choice(cleanliness_levels),
+            "sleep_schedule": random.choice(sleep_schedules),
+            "study_habits": random.choice(study_habits),
+            "social_level": random.choice(social_levels),
+            "pet_friendly": random.choice(pet_friendly_options),
+            "points": random.randint(50, 100),  # Random points between 50 and 100
+            "contact": f"user{start_user_id + i}@example.com"  # Unique email
+        }
+        mock_roommates.append(roommate)
+
+    # Generate unique user IDs
+
+    for roommate in mock_roommates:
+        existing_roommate = db.query(Roommate).filter(Roommate.user_id == roommate["user_id"]).first()
+        if not existing_roommate:
+            db.add(Roommate(**roommate))
+
+    db.commit()
+    return {"message": "200 mock roommates added successfully"}
