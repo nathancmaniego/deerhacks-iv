@@ -79,6 +79,12 @@ NAME     : Different background on different pages
 PRIORITY : 2
 ESTIMATE : 15 minutes   ACTUAL : 15 minutes
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY FUS1.013: markgobriel : Not Started
+NAME     : Hookup back-end of roommates to roommates page
+PRIORITY : 9
+ESTIMATE : 2 hours   ACTUAL : 
+--------------------------------------------------------------------------
 BACKEND
 --------------------------------------------------------------------------
 TYPE     : USER STORY BUS1.001 : USER : nathanmaniego COMPLETED
