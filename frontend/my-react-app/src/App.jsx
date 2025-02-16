@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Listings from "./pages/listings";
 import Roommates from "./pages/roommates";
 import Contact from "./pages/contact";
+import ListingDetails from "./pages/ListingDetails"
 import "./index.css";
 
 function AppContent() {
