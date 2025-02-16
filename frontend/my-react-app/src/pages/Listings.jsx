@@ -51,11 +51,11 @@ function Listings() {
 
         const matchesPrice =
             priceFilter === "all" ||
-            (priceFilter === "under1000" && listing.price < 1000) ||
-            (priceFilter === "1000to1500" &&
-                listing.price >= 1000 &&
-                listing.price <= 1500) ||
-            (priceFilter === "over1500" && listing.price > 1500);
+            (priceFilter === "under2000" && listing.price < 2000) ||
+            (priceFilter === "2000to2500" &&
+                listing.price >= 2000 &&
+                listing.price <= 2500) ||
+            (priceFilter === "over2500" && listing.price > 2500);
 
         return matchesSearch && matchesPrice;
     });
@@ -102,14 +102,14 @@ function Listings() {
                 </div>
 
                 <select
-                    className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="price-filter"
                     value={priceFilter}
                     onChange={(e) => setPriceFilter(e.target.value)}
                 >
                     <option value="all">All Prices</option>
-                    <option value="under1000">Under $1000</option>
-                    <option value="1000to1500">$1000 - $1500</option>
-                    <option value="over1500">Over $1500</option>
+                    <option value="under2000">Under $2000</option>
+                    <option value="2000to2500">$2000 - $2500</option>
+                    <option value="over2500">Over $2500</option>
                 </select>
             </div>
 
