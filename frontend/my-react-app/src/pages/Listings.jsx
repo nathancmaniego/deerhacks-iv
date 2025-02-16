@@ -96,7 +96,7 @@ function Listings() {
         </div>
 
         <select
-          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="price-filter"
           value={priceFilter}
           onChange={(e) => setPriceFilter(e.target.value)}
         >
