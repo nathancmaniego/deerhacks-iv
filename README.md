@@ -1,5 +1,5 @@
 # 🏡 Dormigo – Hackathon Project Summary
-**Project Website:** https://deerhacks-iv--kappa.vercel.app/
+**Project Website:** https://deerhacks-iv.vercel.app/
 
 ## 🚀 Theme: Discovery
 **💡 Idea:** A one‑stop platform that helps students discover rental listings and roommates by aggregating listings from Zillow and Toronto Rentals—all while using roommate matching and trust scoring to reduce scams.
